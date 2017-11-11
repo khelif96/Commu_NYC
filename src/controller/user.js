@@ -7,7 +7,7 @@ exports.getUser = (req, res)=>{
         res.status(400);
         res.json("No email specified");
     }else{
-        User.findOne({'email' : req.body.email}, function(err, user){
+        User.findOne({'email' : req.body.email}, '-password_hash -api_token', function(err, user){
             if(err){
                 res.json(err);
             }else{
