@@ -4,7 +4,8 @@ import {Route,Router} from 'react-router-dom'
 import history from '../Utils/history'
 import NavBar from '../Components/Navigation/NavBar';
 import Home from './Home';
-import ChooseUser from './UserPicker/ChooseUser';
+import Login from './Login';
+import Feed from './Feed/Feed'
 
 class App extends Component {
   render() {
@@ -13,8 +14,12 @@ class App extends Component {
         <div >
           <NavBar/>
         <div>
+
+        <div>
+          <Feed />
+        </div>
           <Route exact path = "/" component = {Home}/>
-          <Route exact path = "/ChooseUser" component = {ChooseUser}/>
+          <Route exact path = "/ChooseUser" component = {Login}/>
         </div>
 
         </div>

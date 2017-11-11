@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Nav,Navbar,NavDropdown,MenuItem} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import {LinkContainer} from 'react-router-bootstrap'
-import {NavBarLink,BrandDiv,Logo} from '../../Styles/NavBar.style'
+import {NavBarLink,BrandDiv,Logo,OurNavBar} from '../../Styles/NavBar.style'
 import logo from "../../Assets/Logo-1.png"
 
 class NavBar extends Component {
@@ -16,7 +16,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <Navbar inverse>
+      <OurNavBar>
         <Navbar.Header>
           <Navbar.Brand>
             <LinkContainer to = '/'>
@@ -46,7 +46,7 @@ class NavBar extends Component {
           </NavDropdown>
         </Nav>
 
-      </Navbar>
+      </OurNavBar>
     );
   }
 }
