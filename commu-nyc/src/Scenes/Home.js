@@ -17,6 +17,7 @@ class Home extends Component {
         textAlign : 'center'
     }
     return (
+
           <div >
             <div style = {style}> HOME </div>
             <Feed />
