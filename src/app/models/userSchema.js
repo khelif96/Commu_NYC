@@ -13,6 +13,7 @@ var userSchema = new Schema({
   api_token: String,
   profileImage : String,
   eventsHelped: [],
+  eventsCreated: [],
   userType: {type: String, required: true} // 2 types Volunteer, Organizer
 
 });

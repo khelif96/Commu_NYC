@@ -12,4 +12,4 @@ var opportunitySchema = new Schema({
   opportunityDate: Date
 });
 
-module.exports = mongoose.model('oppurtunity',oppurtunitySchema);
+module.exports = mongoose.model('opportunity',opportunitySchema);
