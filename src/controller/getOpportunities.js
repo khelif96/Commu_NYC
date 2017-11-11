@@ -16,7 +16,12 @@ exports.getOpportunitiesbyVolunteer = (req, res) => {
     var opportunitiesSignedUp = [];
     Opportunity.find({}, function(err, opportunities){
         for(var i = 0; i < opportunities.length; i++){
-            if(opportunities[i].volunteer_id.indexOf(req.body.volunteer_id) != -1) opportunitiesSignedUp.push(element);
+            for(var j = 0; j < opportunities[i].volunteerIds.length; j++){
+                if(opportunities[i].volunteerIds[j] == req.body.volunteer_id){
+                    opportunitiesSignedUp.push(opportunities[i]);
+                    break;
+                }
+            }
         }
         res.send(opportunitiesSignedUp);
     });
