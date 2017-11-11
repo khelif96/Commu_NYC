@@ -8,6 +8,7 @@ const saltRounds = 10; // How many times to salt the password
 // Configure Hat for generating api tokens
 var rack = hat.rack(64,16);
 
+// Middle wear to check if api_token is in request
 exports.checkAuth = (req,res,next) => {
   if(req.body.api_token === undefined){
     res.status(400).json({"error": "Missing api_token in request"});
@@ -29,7 +30,7 @@ exports.registerUser = (req,res) => {
         var tempUser = new User();
         tempUser.email = req.body.email;
         tempUser.api_token = rack();
-        tempUser.userType = req.body.userType;
+        tempUser.userType = "Volunteer";
         tempUser.name.first = req.body.name.first;
         tempUser.name.last = req.body.name.last
         bcrypt.hash(req.body.password, saltRounds, function(err,hash){

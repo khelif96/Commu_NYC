@@ -29,4 +29,5 @@ export const Logo = styled.img`
 `
 export const OurNavBar = styled(Navbar)`
   background-color : #FFCAAE;
+  &:hover{ cursor : pointer }
 `;
