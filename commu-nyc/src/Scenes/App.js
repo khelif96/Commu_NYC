@@ -6,6 +6,8 @@ import NavBar from '../Components/Navigation/NavBar';
 import Home from './Home';
 import ChooseUser from './UserPicker/ChooseUser';
 import PostPage from './PostPage';
+import Login from './Login';
+import Feed from './Feed/Feed'
 
 class App extends Component {
   render() {
@@ -17,6 +19,7 @@ class App extends Component {
           <Route exact path = "/" component = {Home}/>
           <Route exact path = "/ChooseUser" component = {ChooseUser}/>
           <Route exact path = "/PostPage" component = {PostPage}/>
+          <Route exact path = "/ChooseUser" component = {Login}/>
         </div>
 
         </div>
