@@ -11,12 +11,12 @@ class JobPanel extends Component {
   }
 
   render() {
-
+    console.log( " job title from panel is : " + this.props.title)
     return (
-      <Panel collapsible header={ <JobHeading>Job Title 1</JobHeading> } eventKey="1">
-        <Organization>Job Org 1</Organization>
-        <DatePosted> Date Posted 1</DatePosted>
-        <Description>Job Description 1</Description>
+      <Panel collapsible header={ <JobHeading>{this.props.title}</JobHeading> } eventKey="1">
+        <Organization>{this.props.posterID} </Organization>
+        <DatePosted> {this.props.createdDate}</DatePosted>
+        <Description>{this.props.description}</Description>
         <div> More details </div>
       </Panel>
     );
