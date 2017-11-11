@@ -7,6 +7,7 @@ const router = express.Router();
 const authRoute = require('../controller/auth');
 const userInfo = require('../controller/user');
 const opportunityRoute = require('../controller/opportunity');
+const opportunityModification = require('../controller/opportunityModification');
 
 router.post('/registerUser', authRoute.registerUser);
 router.post('/loginUser', authRoute.loginUser);
@@ -19,6 +20,7 @@ router.post('/opportunity', opportunityRoute.getOpportunities);
 router.use(authRoute.checkAuth);
 
 router.post('/userInfobyAPI', userInfo.getUserbyAPI);
+router.post('/createOpportunity', opportunityModification.createOpportunity);
 
 // Return Router
 module.exports = router;
