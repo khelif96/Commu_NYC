@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/khelif96/Commu_NYC#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "hat": "0.0.3",
     "mongoose": "^4.13.1"
   }
 }
