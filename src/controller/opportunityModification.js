@@ -31,3 +31,31 @@ exports.createOpportunity = (req,res) => {
     }
   }
 )};
+
+exports.registerForOpportunity = (req,res) => {
+  User.findOne({api_token: req.body.api_token},function(err,userDoc){
+    if(!userDoc || err){
+      res.status(401).json({error: "Invalid api_token"});
+    }else{
+      Opportunity.findById(req.body.opportunityId,function(err, opportunity){
+        opportunity.volunteerIds.push(userDoc._id);
+        userDoc.eventsHelped.push(opportunity._id);
+        opportunity.save(function(err){
+          if(err){
+
+            console.log("Opportunity Join Error");
+            res.status(500).json({error: "Error joining this Opportunity"});
+          }
+        });
+        userDoc.save(function(err){
+          if(err){
+          console.log("user Save Error");
+          res.status(500).json({error: "Error joining this Opportunity"});
+        }
+        });
+        console.log("Sending Response");
+        res.status(201).json({message: "Successfully Registered For this Opportunity"});
+      });
+}
+});
+}

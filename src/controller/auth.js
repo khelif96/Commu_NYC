@@ -12,6 +12,7 @@ exports.checkAuth = (req,res,next) => {
   if(req.body.api_token === undefined){
     res.status(400).json({"error": "Missing api_token in request"});
   }else{
+    console.log("Auth Passed");
   next();
 }
 }

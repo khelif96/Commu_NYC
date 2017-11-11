@@ -16,6 +16,7 @@ router.post('/loginUser', authRoute.loginUser);
 router.use(authRoute.checkAuth);
 
 router.post('/createOpportunity', opportunityModification.createOpportunity);
+router.post('/registerForOpportunity', opportunityModification.registerForOpportunity);
 
 // Return Router
 module.exports = router;
