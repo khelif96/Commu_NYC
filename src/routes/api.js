@@ -6,14 +6,14 @@ const router = express.Router();
 
 const authRoute = require('../controller/auth');
 const userInfo = require('../controller/user');
-const opportunityRoute = require('../controller/opportunity');
+const opportunityRoute = require('../controller/getOpportunities');
 const opportunityModification = require('../controller/opportunityModification');
 
 router.post('/registerUser', authRoute.registerUser);
 router.post('/loginUser', authRoute.loginUser);
 router.post('/userInfobyEmail', userInfo.getUserbyEmail);
 router.post('/userInfobyID', userInfo.getUserbyID);
-router.post('/opportunity', opportunityRoute.getOpportunities);
+router.post('/getOpportunities', opportunityRoute.getOpportunities);
 
 // Routes that require an api_token after this
 

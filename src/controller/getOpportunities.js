@@ -1,8 +1,8 @@
 var Opportunity = require('../app/models/opportunitySchema');
 
 exports.getOpportunities = (req, res) => {
-    Opportunity.model({}, function(err, opportunity){
+    Opportunity.find({}, function(err, opportunities){
         if(err) res.json(err);
-        else res.json(opportunity);
+        else res.send(opportunities);
     });
 }
