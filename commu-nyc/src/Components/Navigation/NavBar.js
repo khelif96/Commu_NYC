@@ -39,8 +39,7 @@ class NavBar extends Component {
               About
             </MenuItem>
             <MenuItem eventKey="1.4">
-              <NavBarLink to = "/PostPage">
-              Posted Services
+              <NavBarLink to = "/PostList">Posted Services
               </NavBarLink>
             </MenuItem>
           </NavDropdown>
