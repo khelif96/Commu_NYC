@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import '../Styles/App.css';
+import Feed from './Feed/Feed'
+
 
 class Home extends Component {
 
@@ -15,8 +17,9 @@ class Home extends Component {
         textAlign : 'center'
     }
     return (
-          <div style = {style}>
-            <div> HOME </div>
+          <div >
+            <div style = {style}> HOME </div>
+            <Feed />
           </div>
     );
   }
