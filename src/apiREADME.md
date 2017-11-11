@@ -55,7 +55,6 @@
 | user | JSON | Success | Return the JSON object on the user |
 
 #### <code>GET</code> /api/getOpportunities
-#####  Input
 #####  Output
 | Parameter | Type | When | Reason |
 |---|---|---|---|
