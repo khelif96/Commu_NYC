@@ -10,8 +10,6 @@ import PostList from './PostList';
 import PostPage from './PostPage';
 import Feed from './Feed/Feed'
 import RegisterVolunteer from './RegisterVolunteer';
-import Login from './Login';
-import PostPage from './PostPage';
 
 
 class App extends Component {
