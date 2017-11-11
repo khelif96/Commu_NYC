@@ -21,6 +21,7 @@ router.use(authRoute.checkAuth);
 
 router.post('/userInfobyAPI', userInfo.getUserbyAPI);
 router.post('/createOpportunity', opportunityModification.createOpportunity);
+router.post('/registerForOpportunity', opportunityModification.registerForOpportunity);
 
 // Return Router
 module.exports = router;
