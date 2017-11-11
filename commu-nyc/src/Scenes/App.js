@@ -5,6 +5,7 @@ import history from '../Utils/history'
 import NavBar from '../Components/Navigation/NavBar';
 import Home from './Home';
 import ChooseUser from './UserPicker/ChooseUser';
+import PostPage from './PostPage';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <div>
           <Route exact path = "/" component = {Home}/>
           <Route exact path = "/ChooseUser" component = {ChooseUser}/>
+          <Route exact path = "/PostPage" component = {PostPage}/>
         </div>
 
         </div>

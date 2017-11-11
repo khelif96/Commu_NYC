@@ -38,6 +38,11 @@ class NavBar extends Component {
             <MenuItem eventKey="1.3">
               About
             </MenuItem>
+            <MenuItem eventKey="1.4">
+              <NavBarLink to = "/PostPage">
+              Posted Services
+              </NavBarLink>
+            </MenuItem>
           </NavDropdown>
         </Nav>
 
