@@ -43,8 +43,7 @@ class Login extends Component {
       //call our axios promise, then retrieve the token from axios
       this.login(Username,Password)
           .then( api_token => {localStorage.setItem('api_token',api_token);
-                              this.setState({ api_token : api_token});
-                              this.props.callbackFromParent(this.state);
+                                alert("Api Token " + api_token);
           })
           .catch( (error) => { localStorage.setItem('api_token',"");
             this.setState({ api_token : ""});
