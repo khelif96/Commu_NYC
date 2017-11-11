@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../Styles/App.css';
 import { Button, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import {FormContainer} from '../Styles/form.style'
-import {login} from '../Utils/auth.js';
+import {register} from '../Utils/auth.js';
 
 
 class RegisterVolunteer extends Component {
@@ -19,7 +19,7 @@ class RegisterVolunteer extends Component {
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
-      this.login = login.bind(this);
+      this.register = register.bind(this);
   }
 
   validateForm() {
@@ -50,13 +50,11 @@ class RegisterVolunteer extends Component {
             );
 
       //call our axios promise, then retrieve the token from axios
-      this.register(currentState)
+      this.register(Username,Password,FirstName,LastName)
           .then( api_token => {localStorage.setItem('api_token',api_token);
                                 alert("Api Token " + api_token);
           })
-          .catch( (error) => { localStorage.setItem('api_token',"");
-            this.setState({ api_token : ""});
-            alert("Error " + error);
+          .catch( (error) => { console.log(error);
           });
 
       event.preventDefault();

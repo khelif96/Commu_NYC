@@ -19,18 +19,18 @@ function login(userName,Password) {
 
 
 }
-function register(currentState){
+export {register};
+function register(Username,Password,FirstName,LastName){
   return axios.post(baseUrl+"/registerUser",{
-      email: currentState.userame,
-      password: currentState.password,
+      email: Username,
+      password: Password,
       name : {
-        first : currentState.username,
-        last : currentState.lastName
+        first : FirstName,
+        last : LastName
       }
     })
     .then((response) => response.data.api_token )
     .catch( (error) => {
-      console.log(error);
-      alert("Error " + error);
+        alert( "this is an error from auth " + error.message);
     });
 }
