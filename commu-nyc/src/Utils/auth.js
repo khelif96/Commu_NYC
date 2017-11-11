@@ -19,3 +19,18 @@ function login(userName,Password) {
 
 
 }
+function register(currentState){
+  return axios.post(baseUrl+"/registerUser",{
+      email: currentState.userame,
+      password: currentState.password,
+      name : {
+        first : currentState.username,
+        last : currentState.lastName
+      }
+    })
+    .then((response) => response.data.api_token )
+    .catch( (error) => {
+      console.log(error);
+      alert("Error " + error);
+    });
+}
