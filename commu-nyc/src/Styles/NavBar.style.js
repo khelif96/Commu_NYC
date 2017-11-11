@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink} from 'react-router-dom'
+import {Navbar} from 'react-bootstrap';
 
 
 export const NavBarLink = styled(NavLink)`
@@ -22,10 +23,10 @@ export const BrandDiv = styled.div`
   padding : 10px 0px 50px 0px;
 
 `
-
 export const Logo = styled.img`
   height : 40px;
   width : 240px;
-
-
 `
+export const OurNavBar = styled(Navbar)`
+  background-color : #FFCAAE;
+`;
