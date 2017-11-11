@@ -14,9 +14,8 @@
 
 #####  Outputs
 | Parameter | Type | When | Reason |
-
-| error | String | error | If you are missing a Parameter or Email belongs to another user |
 |---|---|---|---|
+| error | String | error | If you are missing a Parameter or Email belongs to another user |
 | status | String | Success | Successful Account Creation |
 | api_token | String | Success| Return an api Token This is required for any auth Requests |
 
