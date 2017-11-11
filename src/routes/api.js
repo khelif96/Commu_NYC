@@ -11,6 +11,7 @@ const opportunityModification = require('../controller/opportunityModification')
 
 router.post('/registerUser', authRoute.registerUser);
 router.post('/loginUser', authRoute.loginUser);
+
 router.post('/userInfobyEmail', userInfo.getUserbyEmail);
 router.post('/userInfobyID', userInfo.getUserbyID);
 router.post('/getOpportunities', opportunityRoute.getOpportunities);
