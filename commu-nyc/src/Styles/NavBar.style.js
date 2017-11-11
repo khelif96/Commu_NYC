@@ -17,8 +17,15 @@ export const NavBarLink = styled(NavLink)`
 
 export const BrandDiv = styled.div`
   font-size : 30px;
-  color : white;
+  color : BLACK;
   &:hover{ cursor : pointer }
-  padding : 30px 0px 50px 0px;
+  padding : 10px 0px 50px 0px;
+
+`
+
+export const Logo = styled.img`
+  height : 40px;
+  width : 240px;
+
 
 `
