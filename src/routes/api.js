@@ -14,7 +14,9 @@ router.post('/loginUser', authRoute.loginUser);
 
 router.post('/userInfobyEmail', userInfo.getUserbyEmail);
 router.post('/userInfobyID', userInfo.getUserbyID);
-router.post('/getOpportunities', opportunityRoute.getOpportunities);
+
+router.get('/getOpportunities', opportunityRoute.getOpportunities);
+
 router.post('/getOpportunitybyID', opportunityRoute.getOpportunitybyID);
 router.post('/getOpportunitiesbyVolunteer', opportunityRoute.getOpportunitiesbyVolunteer);
 // Routes that require an api_token after this
