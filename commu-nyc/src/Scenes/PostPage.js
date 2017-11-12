@@ -78,7 +78,7 @@ class PostPage extends Component {
             <div style = {styleVolunCard} class="VolunCards">
 
               <div style = {styleVolunCardHeader} class="VolunHeaderCard">
-                <div style = {styleBigHeader} id="VolunTitle" > <p><b>{title}</b></p> </div>
+                <div style = {styleBigHeader} id="VolunTitle" > <p><b>Volunteer Title</b></p> </div>
                 <div style = {styleMediumHeader} id="VolunOrgName"> <p>By: Organization Name </p> </div>
                 <div style = {styleMediumHeader} id="VolunDatePosted"> <p>Posted: November 11, 2017 at 11:45AM</p></div>
               </div>
