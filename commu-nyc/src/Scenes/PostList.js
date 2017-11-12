@@ -1,23 +1,42 @@
 import React, { Component } from 'react';
 import '../Styles/App.css';
+import {retrieveJobs} from '../Utils/auth.js';
+import JobTitle from './Feed/JobTitle';
+import data from '../jobs.json';
 
 class PostList extends Component {
-
   constructor(props){
-      super(props);
-  }
-
-  render() {
-    var styleBigHeader =  {
-        color : 'orange',
-        fontSize : 100,
-        textAlign : 'center',
-        align : 'center'
+    super(props);
+    this.state = {
+      jobs : []
     }
-    return (
-          <div style = {styleBigHeader}>
-            <button style = {styleBigHeader}>Job Posting</button>
-          </div>
+
+    this.getJobs = this.getJobs.bind(this)
+    this.retrieveJobs = retrieveJobs.bind(this);
+
+}
+
+createPanel(job){
+    return  (<JobTitle title = {job.title} posterID = {job.posterId} createdDate = {job.createdDate} description = {job.description}/>);
+}
+
+getJobs(){
+  this.retrieveJobs()
+      .then( arrayOfJobs => {
+        let tempArray = []
+        for(var i = 0; i < arrayOfJobs.length; i++)  tempArray.push(this.createPanel(arrayOfJobs[i]));
+        this.setState({jobs : tempArray})
+      })
+      .catch( (error) => {  alert("Error " + error);
+      });
+}
+render() {
+  this.getJobs();
+  return (
+   
+    <a href = "/PostPage"> 
+        {this.state.jobs}
+    </a>
     );
   }
 }
