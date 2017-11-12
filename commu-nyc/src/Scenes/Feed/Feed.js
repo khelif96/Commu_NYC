@@ -4,7 +4,7 @@ import '../../Styles/App.css';
 import {PanelGroup ,Panel} from 'react-bootstrap';
 import { FeedContainer } from '../../Styles/feed.style';
 import JobPanel from './JobPanel';
-import jobs from '../../jobs.json';
+import data from '../../jobs.json';
 
 class Feed extends Component {
   constructor(props){
@@ -13,17 +13,14 @@ class Feed extends Component {
   }
 
   createPanel(job){
-
-      return  (<JobPanel title = {job.title} posterID = {job.posterId} createdDate = {job.createdDate} description = {job.description}/>
-      );
+      return  (<JobPanel title = {job.title} posterID = {job.posterId} createdDate = {job.createdDate} description = {job.description}/>);
   }
   render() {
-    console.log("jobs : " + jobs[0]._id)
-    //this.jobs.push(this.createPanel(jobs[0]._id))
+    for(var i = 0; i < data.length; i++) this.jobs.push(this.createPanel(data[i]))
     return (
       <FeedContainer>
           <PanelGroup>
-            <JobPanel/>
+          {this.jobs}
           </PanelGroup>
 
       </FeedContainer>
