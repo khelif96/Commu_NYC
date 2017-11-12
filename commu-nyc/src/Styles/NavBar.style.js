@@ -7,7 +7,7 @@ export const NavBarLink = styled(NavLink)`
   color : Black;
   text-decoration: none;
   font-size: 15px;
-  display: inline-block;
+  display: block;
   padding : 5px;
 
   &:active{ color : gray;
