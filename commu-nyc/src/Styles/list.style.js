@@ -12,7 +12,7 @@ export const Logo = styled.img`
   height : 40px;
   width : 240px;
 `
-export const FeedContainer = styled.div`
+export const ListContainer = styled.div`
     position: relative;
     margin: 3rem auto;
     max-width : 500px;
