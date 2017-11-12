@@ -34,3 +34,12 @@ function register(Username,Password,FirstName,LastName){
         alert( "this is an error from auth " + error.message);
     });
 }
+
+export {retrieveJobs};
+function retrieveJobs(){
+  return axios.get(baseUrl+"/getOpportunities")
+    .then((response) => response.data )
+    .catch( (error) => {
+        alert( "this is an error from auth " + error.message);
+    });
+}
