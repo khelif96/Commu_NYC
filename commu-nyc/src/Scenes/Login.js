@@ -44,6 +44,7 @@ class Login extends Component {
       this.login(Username,Password)
           .then( api_token => {localStorage.setItem('api_token',api_token);
                                 alert("Api Token " + api_token);
+                                this.props.history.push('/');
           })
           .catch( (error) => { localStorage.setItem('api_token',"");
             this.setState({ api_token : ""});
