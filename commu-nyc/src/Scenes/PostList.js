@@ -34,7 +34,7 @@ render() {
   this.getJobs();
   return (
    
-    <a href = "/PostPage"> 
+    <a href = "/PostPage">
         {this.state.jobs}
     </a>
     );
