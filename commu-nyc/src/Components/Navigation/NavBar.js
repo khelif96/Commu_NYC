@@ -45,6 +45,10 @@ class NavBar extends Component {
                 Posted Services
               </NavBarLink>
             </MenuItem>
+            <MenuItem eventKey="1.5">
+              <NavBarLink to = "/myAccount">My Account
+              </NavBarLink>
+            </MenuItem>
           </NavDropdown>
         </Nav>
 
