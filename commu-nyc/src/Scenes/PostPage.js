@@ -14,7 +14,7 @@ class PostPage extends Component {
       marginRight: 70,
       marginTop: 40,
       borderRadius: 8,
-      boxShadow: '4px 4px 4px #D3D3D3',
+      boxShadow: '3px 3px 3px #888888',
       alignContent: 'center',
       paddingBottom: 15
     }
@@ -26,7 +26,7 @@ class PostPage extends Component {
       borderTopRightRadius: 8,
       boxShadow: '2px 2px 2px gray'
     }
-    var styleJobCardParagraph = {
+    var styleVolunCardParagraph = {
       padding: 30
     }
     var styleBigHeader =  {
@@ -36,12 +36,12 @@ class PostPage extends Component {
     }
     var styleMediumHeader = {
         color: 'white',
-        fontSize: 20,
+        fontSize: 15,
         textAlign: 'left'
     }
     var styleSmallHeader = {
         color : 'black',
-        fontSize : 20,
+        fontSize : 10,
         textAlign : 'left'
     }
     var styleParagraph = {
@@ -62,8 +62,8 @@ class PostPage extends Component {
       borderRadius: 4
     }
     var styleBackButton = {
-      background: 'gray',
-      color: 'white',
+      background: '#D3D3D3',
+      color: 'black',
       float: 'right',
       paddingLeft: 15,
       paddingRight: 15,
@@ -71,54 +71,67 @@ class PostPage extends Component {
       marginRight: 7,
       paddingTop: 5,
       border: 0,
-      boxShadow: '2px 2px 2px gray',
       borderRadius: 4
     }
     return (
           <div>
-            <div style = {styleVolunCard}>
+            <div style = {styleVolunCard} class="VolunCards">
 
-              <div style = {styleVolunCardHeader} class="VolunCard">
-                <div style = {styleBigHeader} id="VolunTitle" > <p><b>Volunteer Title</b></p> </div>
+              <div style = {styleVolunCardHeader} class="VolunHeaderCard">
+                <div style = {styleBigHeader} id="VolunTitle" > <p><b>{title}</b></p> </div>
                 <div style = {styleMediumHeader} id="VolunOrgName"> <p>By: Organization Name </p> </div>
                 <div style = {styleMediumHeader} id="VolunDatePosted"> <p>Posted: November 11, 2017 at 11:45AM</p></div>
               </div>
 
-                <div style = {styleJobCardParagraph}>
-                    <div><p style = {styleParagraph}><b> Description:</b> </p></div>
-                    <p style ={styleParagraph}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                    </p>
+                <div style = {styleVolunCardParagraph} class="VolunParaCards">
+                    <div class="VolunParaDescripCard">
+                      <div id="VolunParaDescrip">
+                        <p style = {styleParagraph}><b> Description:</b> </p>
+                      </div>
+                      <div id="VolunParaD">
+                        <p style ={styleParagraph}>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                        </p>
+                      </div>
+                    </div>
 
                     <br></br>
 
-                    <p style = {styleParagraph}><b> Requirements:</b> </p>
-                    <p style ={styleParagraph}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                    </p>
+                    <div class="VolunParaReqCard">
+                      <div id="VolunParaReq">
+                        <p style = {styleParagraph}><b>Requirements:</b> </p>
+                      </div>
+                      <div id="VolunParaR">
+                        <p style ={styleParagraph}>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                        </p>
+                      </div>
+                    </div>
 
                     <br></br>
 
                     <div>
-                    <button style = {styleAcceptButton} class="mdc-button">
-                      <i class="material-icons mdc-button"></i>
-                        ACCEPT
+                      <button style = {styleAcceptButton} class="mdc-button">
+                        <i class="material-icons mdc-button"></i>
+                          ACCEPT
                       </button>
                     </div>
+
                     <div>
-                    <button style = {styleBackButton} class="mdc-button">
-                      <i class="material-icons mdc-button"></i>
-                        BACK
+                      <button style = {styleBackButton} class="mdc-button">
+                        <i class="material-icons mdc-button"></i>
+                          BACK TO VOLUNTEER PAGE
                       </button>
-                  </div>
+                   </div>
+
                 </div>
               </div>
           </div>
