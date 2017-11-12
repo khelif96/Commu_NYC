@@ -4,9 +4,15 @@ import {Route,Router} from 'react-router-dom'
 import history from '../Utils/history'
 import NavBar from '../Components/Navigation/NavBar';
 import Home from './Home';
+
+import Login from './Login';
+import PostList from './PostList';
+import PostPage from './PostPage';
+import Feed from './Feed/Feed'
 import RegisterVolunteer from './RegisterVolunteer';
 import Login from './Login';
 import PostPage from './PostPage';
+
 
 class App extends Component {
   render() {
@@ -17,9 +23,11 @@ class App extends Component {
         <div>
 
           <Route exact path = "/" component = {Home}/>
+
           <Route  path = "/Login" component = {Login}/>
           <Route  path = "/RegisterVolunteer" component = {RegisterVolunteer}/>
           <Route  path = "/PostPage" component = {PostPage}/>
+
 
         </div>
 
