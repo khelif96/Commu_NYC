@@ -11,6 +11,7 @@ import PostPage from './PostPage';
 import Feed from './Feed/Feed'
 import RegisterVolunteer from './RegisterVolunteer';
 
+import MyAccount from './myAccount';
 
 class App extends Component {
   render() {
@@ -22,10 +23,10 @@ class App extends Component {
 
           <Route exact path = "/" component = {Home}/>
 
-          <Route exact path = "/ChooseUser" component = {Login}/>
-          <Route exact path = "/PostList" component = {PostList}/>
-          <Route exact path = "/PostPage" component = {PostPage}/>
-          <Route exact path = "/RegisterVolunteer" component = {RegisterVolunteer}/>
+          <Route  path = "/Login" component = {Login}/>
+          <Route  path = "/RegisterVolunteer" component = {RegisterVolunteer}/>
+          <Route  path = "/PostPage" component = {PostPage}/>
+          <Route  path = "/myAccount" component = {MyAccount}/>
 
         </div>
 

@@ -34,12 +34,18 @@ class NavBar extends Component {
                 Register
               </NavBarLink>
             </MenuItem>
-            <MenuItem divider />
             <MenuItem eventKey="1.3">
-              About
+            <NavBarLink to = "/Login">
+              Login
+            </NavBarLink>
             </MenuItem>
+            <MenuItem divider />
             <MenuItem eventKey="1.4">
               <NavBarLink to = "/PostList">Posted Services
+              </NavBarLink>
+            </MenuItem>
+            <MenuItem eventKey="1.5">
+              <NavBarLink to = "/myAccount">My Account
               </NavBarLink>
             </MenuItem>
           </NavDropdown>
