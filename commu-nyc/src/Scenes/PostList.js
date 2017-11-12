@@ -1,38 +1,42 @@
 import React, { Component } from 'react';
 import '../Styles/App.css';
-import {PanelGroup ,Panel} from 'react-bootstrap';
-
+import {retrieveJobs} from '../Utils/auth.js';
+import JobTitle from './Feed/JobTitle';
 import data from '../jobs.json';
 
 class PostList extends Component {
-
   constructor(props){
-      super(props);
-      this.jobs = [];
-  }
-  createJob(job){
-    return  (<div title = {job.title} posterID = {job.posterId} createdDate = {job.createdDate} description = {job.description}/>);
+    super(props);
+    this.state = {
+      jobs : []
+    }
+
+    this.getJobs = this.getJobs.bind(this)
+    this.retrieveJobs = retrieveJobs.bind(this);
+
 }
 
-  render() {
-    var pageStyle = {
-        fontSize : 50,
-    }
-    var pageHeader = {
-        color : 'orange',
-        fontSize : 50
-    }
-    for(var i = 0; i < data.length; i++) this.jobs.push(this.createJob(data[i]))
-    return (
+createPanel(job){
+    return  (<JobTitle title = {job.title} posterID = {job.posterId} createdDate = {job.createdDate} description = {job.description}/>);
+}
 
-        <div >
-          
-          <div style = {pageHeader}> Post List </div>
-          <div style = {pageStyle}>
-            <a href = "/PostPage">{this.jobs[i]}</a>
-          </div>
-
-        </div>
+getJobs(){
+  this.retrieveJobs()
+      .then( arrayOfJobs => {
+        let tempArray = []
+        for(var i = 0; i < arrayOfJobs.length; i++)  tempArray.push(this.createPanel(arrayOfJobs[i]));
+        this.setState({jobs : tempArray})
+      })
+      .catch( (error) => {  alert("Error " + error);
+      });
+}
+render() {
+  this.getJobs();
+  return (
+   
+    <a href = "/PostPage"> 
+        {this.state.jobs}
+    </a>
     );
   }
 }

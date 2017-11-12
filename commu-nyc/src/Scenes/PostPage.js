@@ -114,10 +114,10 @@ class PostPage extends Component {
                       </button>
                     </div>
                     <div>
-                    <button style = {styleBackButton} class="mdc-button">
+                    <button style = {styleBackButton} class="mdc-button"><a href = "/PostList">
                       <i class="material-icons mdc-button"></i>
                         BACK
-                      </button>
+                      </a></button>
                   </div>
                 </div>
               </div>
