@@ -41,7 +41,8 @@ class NavBar extends Component {
             </MenuItem>
             <MenuItem divider />
             <MenuItem eventKey="1.4">
-              <NavBarLink to = "/PostList">Posted Services
+              <NavBarLink to = "/PostList">
+                Posted Services
               </NavBarLink>
             </MenuItem>
           </NavDropdown>
