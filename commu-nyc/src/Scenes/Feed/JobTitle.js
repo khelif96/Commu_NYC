@@ -14,7 +14,7 @@ class JobTitle extends Component {
     console.log( " job title from panel is : " + this.props.title)
     return (
       <div>
-        <Title>{this.props.title}</Title>
+        <Title><a href = "/PostPage">{this.props.title}</a></Title>
         <Organization>{this.props.posterID} </Organization>
       </div>
     );
