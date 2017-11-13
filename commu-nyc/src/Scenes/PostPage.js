@@ -1,11 +1,41 @@
 import React, { Component } from 'react';
+import {getOpportunitybyID} from '../Utils/Opportunity.js';
+
 import '../Styles/App.css';
 
 class PostPage extends Component {
 
   constructor(props){
       super(props);
+      this.state = {
+        title : "Sample Title",
+        description : "No Description",
+        opportunity_id :this.props.match.params.id
+
+
+
+      }
+      this.getOpportunitybyID = getOpportunitybyID.bind(this);
+      this.retrieveOpportunitybyID = this.retrieveOpportunitybyID.bind(this);
+      this.retrieveOpportunitybyID(this.state.opportunity_id);
+
   }
+  retrieveOpportunitybyID(opportunity_id){
+    //  const Api_token = this.state.api_token;
+     //call our axios promise, then retrieve the token from axios
+     console.log("About to make the request to " + this.state.opportunity_id);
+
+     this.getOpportunitybyID(this.state.opportunity_id)
+         .then( opportunity => {
+
+         })
+         .catch( (error) => { localStorage.setItem('api_token',"");
+           this.setState({ api_token : ""});
+           alert("Error " + error);
+         });
+
+     // event.preventDefault();
+ }
 
   render() {
     var styleVolunCard = {
@@ -78,20 +108,16 @@ class PostPage extends Component {
           <div>
             <div style = {styleVolunCard}>
 
-              <div style = {styleVolunCardHeader} class="VolunCard">
-                <div style = {styleBigHeader} id="VolunTitle" > <p><b>Volunteer Title</b></p> </div>
-                <div style = {styleMediumHeader} id="VolunOrgName"> <p>By: Organization Name </p> </div>
+              <div style = {styleVolunCardHeader} className="VolunCard">
+                <div style = {styleBigHeader} id="VolunTitle" > <p><b>{this.state.title}</b></p> </div>
+                <div style = {styleMediumHeader} id="VolunOrgName"> <p>By: {this.state.posterName} </p> </div>
                 <div style = {styleMediumHeader} id="VolunDatePosted"> <p>Posted: November 11, 2017 at 11:45AM</p></div>
               </div>
 
                 <div style = {styleJobCardParagraph}>
                     <div><p style = {styleParagraph}><b> Description:</b> </p></div>
                     <p style ={styleParagraph}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero obcaecati, aut error consectetur adipiscing eli
+                      {this.state.description}
                     </p>
 
                     <br></br>
@@ -108,16 +134,16 @@ class PostPage extends Component {
                     <br></br>
 
                     <div>
-                    <button style = {styleAcceptButton} class="mdc-button">
-                      <i class="material-icons mdc-button"></i>
+                    <button style = {styleAcceptButton} className="mdc-button">
+                      <i className="material-icons mdc-button"></i>
                         ACCEPT
                       </button>
                     </div>
                     <div>
-                    <button style = {styleBackButton} class="mdc-button"><a href = "/PostList">
-                      <i class="material-icons mdc-button"></i>
+                    <button style = {styleBackButton} className="mdc-button">
+                      <i className="material-icons mdc-button"></i>
                         BACK
-                      </a></button>
+                      </button>
                   </div>
                 </div>
               </div>

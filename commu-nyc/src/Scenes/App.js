@@ -10,7 +10,6 @@ import PostList from './PostList';
 import PostPage from './PostPage';
 import Feed from './Feed/Feed'
 import RegisterVolunteer from './RegisterVolunteer';
-
 import MyAccount from './myAccount';
 
 class App extends Component {
@@ -25,9 +24,9 @@ class App extends Component {
 
           <Route  path = "/Login" component = {Login}/>
           <Route  path = "/RegisterVolunteer" component = {RegisterVolunteer}/>
-          <Route  path = "/PostList" component = {PostList}/>
           <Route  path = "/PostPage" component = {PostPage}/>
           <Route  path = "/myAccount" component = {MyAccount}/>
+          <Route  path = "/getPost/:id" component = {PostPage}/>
 
         </div>
 
