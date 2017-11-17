@@ -79,9 +79,19 @@ class NavBar extends Component {
                 <NavBarLink to="/PostList">
                   Posted Services
               </NavBarLink>
-              </MenuItem>
-            </NavDropdown>
-          </Nav>
+            </MenuItem>
+            <MenuItem eventKey="1.5">
+              <NavBarLink to = "/myAccount">My Account
+              </NavBarLink>
+            </MenuItem>
+            <MenuItem eventKey="1.6">
+              <NavBarLink to = "/RegisterJob">
+                Register Job
+              </NavBarLink>
+            </MenuItem>
+          </NavDropdown>
+        </Nav>
+
 
         </OurNavBar>
       );

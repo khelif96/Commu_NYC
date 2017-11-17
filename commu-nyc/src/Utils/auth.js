@@ -43,3 +43,17 @@ function retrieveJobs(){
         alert( "this is an error from auth " + error.message);
     });
 }
+
+export {registerJobs};
+function registerJobs(Title,Description,DateOfEvent,API_token){
+  return axios.post(baseUrl+"/createOpportunity",{
+      title: Title,
+      description: Description,
+      api_token: API_token,
+      opportunityDate : DateOfEvent
+    })
+    .then((response) => alert( "success : " + response.message) )
+    .catch( (error) => {
+        alert( "this is an error from auth " + error.message);
+    });
+}
