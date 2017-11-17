@@ -21,6 +21,8 @@ class MyAccount extends Component {
       // this.handleSubmit = this.handleSubmit.bind(this);a
       this.getAccountByApiToken = getAccountByApiToken.bind(this);
       this.getAccountInfo = this.getAccountInfo.bind(this);
+      this.getAccountInfo();
+
       // getAccountInfo();
   }
 
@@ -45,7 +47,6 @@ class MyAccount extends Component {
      // event.preventDefault();
  }
   render() {
-    this.getAccountInfo();
     return(
       <div>
       <h1> {this.state.api_token}</h1>

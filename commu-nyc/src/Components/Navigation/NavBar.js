@@ -49,6 +49,11 @@ class NavBar extends Component {
               <NavBarLink to = "/myAccount">My Account
               </NavBarLink>
             </MenuItem>
+            <MenuItem eventKey="1.6">
+              <NavBarLink to = "/RegisterJob">
+                Register Job
+              </NavBarLink>
+            </MenuItem>
           </NavDropdown>
         </Nav>
 

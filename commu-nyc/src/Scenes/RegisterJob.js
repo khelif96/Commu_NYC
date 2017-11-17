@@ -3,28 +3,27 @@ import React, { Component } from 'react';
 import '../Styles/App.css';
 import { Button, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import {FormContainer} from '../Styles/form.style'
-import {register} from '../Utils/auth.js';
-
+import {registerJobs} from '../Utils/auth.js';
 
 class RegisterJob extends Component {
 
   constructor(props){
       super(props);
       this.state = {
-        username : "",
-        firstName : "",
-        lastName : "",
-        password : "",
-        api_token : ""
+        description : "",
+        dateOfEvent : "",
+        titleOfEvent : "",
+        api_token : localStorage.getItem("api_token")
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
-      this.register = register.bind(this);
+      this.registerJobs = registerJobs.bind(this);
   }
 
   validateForm() {
-     return (this.state.username.length > 0 && this.state.password.length > 0
-            && this.state.firstName.length > 0 && this.state.lastName.length > 0);
+     return (this.state.dateOfEvent.length > 0 && this.state.description.length > 0
+           && this.state.titleOfEvent.length > 0
+            );
    }
 
   handleChange(event) {
@@ -33,26 +32,23 @@ class RegisterJob extends Component {
     );
   }
 
-//records our username and password and calls the login authentication
+//records our organization and description and calls the login authentication
 //if passed we do another promise call to say that when we find our response
 // we will set the response's api token into our current state and localStorage
 //local storage will keep our token even after a refresh
   handleSubmit(event) {
-      const Username = this.state.username;
-      const Password = this.state.password;
-      const FirstName = this.state.firstName;
-      const LastName = this.state.lastName;
+      const Description = this.state.description;
+      const DateOfEvent = this.state.dateOfEvent;
+      const TitleOfEvent = this.state.titleOfEvent;
+      const API_token = this.state.api_token;
 
-      const currentState = this.state;
-
-      alert("Your username is "+ Username + "\nPassword : " + Password +
-            "\nYour First Name is "+ FirstName + "\nLast Name : " + LastName + "\n"
+      alert( "\ndescription : " + Description + "\n The date of event: " + DateOfEvent
+            + "\nThe name of Event : " + TitleOfEvent +  "\nAPI TOKEN : " + API_token +"\n"
             );
 
       //call our axios promise, then retrieve the token from axios
-      this.register(Username,Password,FirstName,LastName)
-          .then( api_token => {localStorage.setItem('api_token',api_token);
-                                alert("Api Token " + api_token);
+      this.registerJobs(TitleOfEvent,Description,DateOfEvent,API_token)
+          .then( response => { alert("Success ");
           })
           .catch( (error) => { console.log(error);
           });
@@ -67,42 +63,32 @@ class RegisterJob extends Component {
       <FormContainer>
           <form onSubmit ={this.handleSubmit}>
 
-          <FormGroup controlId="firstName" bsSize = "large">
-            <ControlLabel>What is your first name?</ControlLabel>
+          <FormGroup controlId="titleOfEvent" bsSize = "large">
+            <ControlLabel>Title of the Job</ControlLabel>
             <FormControl
                   autoFocus
-                  type="firstName"
-                  value={this.state.firstName}
+                  type="titleOfEvent"
+                  value={this.state.titleOfEvent}
                   onChange={this.handleChange}
                 />
           </FormGroup>
 
-          <FormGroup controlId="lastName" bsSize = "large">
-            <ControlLabel>What is your last name?</ControlLabel>
+          <FormGroup controlId="dateOfEvent" bsSize = "large">
+            <ControlLabel>When is the Event</ControlLabel>
             <FormControl
                   autoFocus
-                  type="lastName"
-                  value={this.state.lastName}
+                  type="dateOfEvent"
+                  value={this.state.dateOfEvent}
                   onChange={this.handleChange}
                 />
           </FormGroup>
 
-          <FormGroup controlId="username" bsSize = "large">
-            <ControlLabel>enter in your email</ControlLabel>
-            <FormControl
-                  autoFocus
-                  type="username"
-                  value={this.state.username}
-                  onChange={this.handleChange}
-                />
-          </FormGroup>
 
-          <FormGroup controlId="password" bsSize = "large">
-            <ControlLabel>create your password</ControlLabel>
+          <FormGroup controlId="description" bsSize = "large">
+            <ControlLabel>Create your description</ControlLabel>
             <FormControl
-                  autoFocus
-                  type="password"
-                  value={this.state.password}
+                  componentClass="textarea"
+                  value={this.state.description}
                   onChange={this.handleChange}
                 />
           </FormGroup>

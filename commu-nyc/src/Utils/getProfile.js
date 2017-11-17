@@ -11,3 +11,14 @@ function getAccountByApiToken(apiToken){
     alert("Error" + error)
   });
 }
+
+export {getAccountByID};
+function getAccountByID(org_ID){
+  return axios.post(baseUrl + "/userInfobyID",{
+    user_id: org_ID
+  })
+  .then((response) => response.data)
+  .catch((error) => {
+    alert("Error" + error)
+  });
+}
